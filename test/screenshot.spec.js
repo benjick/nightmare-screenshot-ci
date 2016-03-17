@@ -6,7 +6,7 @@ require('mocha-generators').install();
 process.setMaxListeners(0);
 
 describe('Take screenshot', function() {
-  this.timeout(15000);
+  this.timeout(150000);
   const port = 3033;
   const url = `http://localhost:${port}`;
 
