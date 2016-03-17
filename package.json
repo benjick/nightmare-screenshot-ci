@@ -1,0 +1,21 @@
+{
+  "name": "electron",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -c --require ./test/setup.js --recursive"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5",
+    "mocha-generators": "^1.2.0",
+    "nightmare": "^2.2.0"
+  },
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
