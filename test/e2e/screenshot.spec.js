@@ -1,14 +1,12 @@
 'use strict';
 
-const server = require('../server.js');
+const server = require('../../server.js');
 
 require('mocha-generators').install();
 process.setMaxListeners(0);
 
-describe('Take screenshot', function() {
+describe('Tests', function() {
   this.timeout(15000);
-  const port = 3033;
-  const url = `http://localhost:${port}`;
 
   let nightmare;
   let newServer;
@@ -18,13 +16,14 @@ describe('Take screenshot', function() {
     nightmare = Nightmare();
   });
 
-  afterEach(function * () {
+  afterEach(function * (done) {
     yield nightmare.end();
     server.stop(newServer);
   });
 
-  it("of startpage", function * () {
+  it("Can take screenshot of startpage", function * () {
     const title = yield nightmare
+      .wait(1000)
       .goto(url)
       .Screenshot.take('widescreen', 1920, 1080)
       .Screenshot.take('mobile', 480, 640)
