@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -c --require ./test/setup.js --recursive"
+    "test": "mocha -c --require ./test/setup.js --recursive",
+    "after_success": "node after_success.js"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +17,8 @@
     "nightmare": "^2.2.0"
   },
   "dependencies": {
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "fetch": "^1.0.1",
+    "node-fetch": "^1.3.3"
   }
 }

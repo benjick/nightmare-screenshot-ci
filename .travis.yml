@@ -6,3 +6,5 @@ install: true
 script:
 - npm install
 - npm test
+after_success:
+- npm run after_success
