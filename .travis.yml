@@ -6,5 +6,6 @@ install: true
 script:
 - npm install
 - npm test
+- ls temp
 after_success:
 - npm run after_success

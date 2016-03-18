@@ -1,6 +1,6 @@
 'use strict';
 
-const server = require('../server.js');
+const server = require('../../server.js');
 const fetch = require('node-fetch');
 const port = 3033;
 const url = `http://localhost:${port}`;
