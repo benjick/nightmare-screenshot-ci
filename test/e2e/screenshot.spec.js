@@ -1,9 +1,6 @@
 'use strict';
 
 const server = require('../../server.js');
-const fetch = require('node-fetch');
-const port = 3033;
-const url = `http://localhost:${port}`;
 
 require('mocha-generators').install();
 process.setMaxListeners(0);
@@ -19,22 +16,14 @@ describe('Tests', function() {
     nightmare = Nightmare();
   });
 
-  afterEach(function * () {
+  afterEach(function * (done) {
     yield nightmare.end();
     server.stop(newServer);
   });
 
-
-  it("Can be accessed with fetch", function * () {
-    const page = yield fetch(url)
-    .then(function(res) {
-  		return res.text();
-  	})
-    expect(page).to.not.equal('');
-  });
-
-  it("can take screenshot of startpage", function * () {
+  it("Can take screenshot of startpage", function * () {
     const title = yield nightmare
+      .wait(1000)
       .goto(url)
       .Screenshot.take('widescreen', 1920, 1080)
       .Screenshot.take('mobile', 480, 640)
